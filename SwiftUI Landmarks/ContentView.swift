@@ -34,7 +34,6 @@ struct ContentView: View {
 
             }
             .padding()
-            
             Spacer() //部品全体を上へ移動させる
 
         }
