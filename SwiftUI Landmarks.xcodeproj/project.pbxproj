@@ -64,11 +64,11 @@
 				E74569372589C8E3002CC4BC /* SceneDelegate.swift */,
 				E74569392589C8E3002CC4BC /* ContentView.swift */,
 				E70D592F2589D06100A58399 /* CircleImage.swift */,
+				E7C757C32589D414007D4AC2 /* MapView.swift */,
 				E745693B2589C8EA002CC4BC /* Assets.xcassets */,
 				E74569402589C8EA002CC4BC /* LaunchScreen.storyboard */,
 				E74569432589C8EA002CC4BC /* Info.plist */,
 				E745693D2589C8EA002CC4BC /* Preview Content */,
-				E7C757C32589D414007D4AC2 /* MapView.swift */,
 			);
 			path = "SwiftUI Landmarks";
 			sourceTree = "<group>";
