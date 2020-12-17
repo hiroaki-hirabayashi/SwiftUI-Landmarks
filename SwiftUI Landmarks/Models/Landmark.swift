@@ -8,7 +8,7 @@ A representation of a single landmark.
 import Foundation
 import SwiftUI
 import CoreLocation
-
+                                    //Identifiable 渡すデータをIdentifableに準拠したデータ型にする
 struct Landmark: Hashable, Codable, Identifiable {
 
     //landmarkData.jsonの情報を配列で受け取る
