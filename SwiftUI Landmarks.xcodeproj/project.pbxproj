@@ -14,10 +14,10 @@
 		E745693C2589C8EA002CC4BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E745693B2589C8EA002CC4BC /* Assets.xcassets */; };
 		E745693F2589C8EA002CC4BC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E745693E2589C8EA002CC4BC /* Preview Assets.xcassets */; };
 		E74569422589C8EA002CC4BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E74569402589C8EA002CC4BC /* LaunchScreen.storyboard */; };
+		E783E3D1258B1E6A00FBFC8A /* landmarkData.json in Resources */ = {isa = PBXBuildFile; fileRef = E7B0CBE1258AF593005E06D1 /* landmarkData.json */; };
 		E7B0CBDB258AF2BA005E06D1 /* LandmarkRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B0CBDA258AF2BA005E06D1 /* LandmarkRow.swift */; };
 		E7B0CBDE258AF52D005E06D1 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B0CBDC258AF52D005E06D1 /* Landmark.swift */; };
 		E7B0CBDF258AF52D005E06D1 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B0CBDD258AF52D005E06D1 /* ModelData.swift */; };
-		E7B0CBE2258AF593005E06D1 /* landmarkData.json in Resources */ = {isa = PBXBuildFile; fileRef = E7B0CBE1258AF593005E06D1 /* landmarkData.json */; };
 		E7C757C42589D414007D4AC2 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C757C32589D414007D4AC2 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
@@ -176,7 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E74569422589C8EA002CC4BC /* LaunchScreen.storyboard in Resources */,
-				E7B0CBE2258AF593005E06D1 /* landmarkData.json in Resources */,
+				E783E3D1258B1E6A00FBFC8A /* landmarkData.json in Resources */,
 				E745693F2589C8EA002CC4BC /* Preview Assets.xcassets in Resources */,
 				E745693C2589C8EA002CC4BC /* Assets.xcassets in Resources */,
 			);

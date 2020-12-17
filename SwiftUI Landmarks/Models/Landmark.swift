@@ -10,7 +10,7 @@ import SwiftUI
 import CoreLocation
 
 struct Landmark: Hashable, Codable, Identifiable {
-   
+
     //landmarkData.jsonの情報を配列で受け取る
     var name: String
     var category: Category
@@ -18,7 +18,7 @@ struct Landmark: Hashable, Codable, Identifiable {
     var id: Int
     var park: String
     var description: String
-    
+
     private var imageName: String
     var image: Image {
         Image(imageName)
@@ -30,11 +30,13 @@ struct Landmark: Hashable, Codable, Identifiable {
             latitude: coordinates.latitude,
             longitude: coordinates.longitude)
     }
-    
+
     enum Category: String, CaseIterable, Codable, Hashable  {
         case featured = "Featured"
         case likes = "Lakes"
         case rivers = "Rivers"
+        case mountains = "Mountains"
+
     }
 }
 
