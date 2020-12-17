@@ -29,7 +29,6 @@ struct LandmarkRow: View {
             Group {
                 LandmarkRow(landmark: landmarkData[0])
                 LandmarkRow(landmark: landmarkData[1])
-
             }
             .previewLayout(.fixed(width: 300, height: 70)) // プレビュー画像自体の大きさ指定
 
