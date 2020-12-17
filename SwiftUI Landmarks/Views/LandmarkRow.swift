@@ -12,13 +12,12 @@ struct LandmarkRow: View {
     
     var landmark: Landmark
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("HelloWorld!!")
     }
 }
 
 struct LandmarkRow_Previews: PreviewProvider {
     static var previews: some View {
-//        LandmarkRow(landmark: landmarkData[0])
         LandmarkRow(landmark: landmarkData[0])
 
     }

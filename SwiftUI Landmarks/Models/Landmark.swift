@@ -10,6 +10,7 @@ import SwiftUI
 import CoreLocation
 
 struct Landmark: Hashable, Codable, Identifiable {
+   
     //landmarkData.jsonの情報を配列で受け取る
     var name: String
     var category: Category
