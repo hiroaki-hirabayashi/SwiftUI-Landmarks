@@ -9,26 +9,29 @@
 import SwiftUI
 
 struct LandmarkDetail: View {
+    
+    var landmark: Landmark
+    
     var body: some View {
         VStack {
-            MapView() //作成した地図を表示と高さ、セーフエリアを超えて表示
+            MapView(coordinate: landmark.locationCoordinate) //作成した地図を表示と高さ、セーフエリアを超えて表示
                 .edgesIgnoringSafeArea(.top)
                 .frame(height: 300.0)
           
-            CircleImage() //イメージ画像と位置
+            CircleImage(image: landmark.image) //イメージ画像と位置
                 .offset(y: -130)
                 .padding(.bottom, -130.0)
             
             VStack(alignment: .leading) {
-                Text("HelloWorld!!!!!!!!")
+                Text(landmark.name)
                     .font(.title)
             
                 HStack {
-                    Text(/*@START_MENU_TOKEN@*/"Joshua Tree National Park"/*@END_MENU_TOKEN@*/)
+                    Text(landmark.park)
                         .font(.subheadline)
                     Spacer()
                     
-                    Text("California")
+                    Text(landmark.state)
                         .font(.subheadline)
                 }
 
@@ -37,11 +40,12 @@ struct LandmarkDetail: View {
             Spacer() //部品全体を上へ移動させる
 
         }
+        .navigationBarTitle(Text(landmark.name), displayMode: .inline)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkDetail()
+        LandmarkDetail(landmark: landmarkData[0])
     }
 }
