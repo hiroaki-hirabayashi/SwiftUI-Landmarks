@@ -11,12 +11,14 @@ import MapKit //地図を扱うフレームワーク
 
 struct MapView: UIViewRepresentable {
     
+    var coordinate: CLLocationCoordinate2D
+    
     func makeUIView(context: Context) -> MKMapView {
         MKMapView(frame: .zero)
     }
     
     func updateUIView(_ view: MKMapView, context: Context) {
-        let coordinate = CLLocationCoordinate2D(latitude: 34.011286, longitude: -116.166868)//座標指定
+//        let coordinate = CLLocationCoordinate2D(latitude: 34.011286, longitude: -116.166868)//座標指定(緯度経度を固定)
         
         let span = MKCoordinateSpan(latitudeDelta: 2.0, longitudeDelta: 2.0) //マップ領域の高さと幅
         
@@ -29,6 +31,6 @@ struct MapView: UIViewRepresentable {
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView()
+        MapView(coordinate: landmarkData[0].locationCoordinate)
     }
 }
