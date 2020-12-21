@@ -18,8 +18,15 @@ struct LandmarkRow: View {
                 .resizable() //画像のサイズ変更可能化
                 .frame(width:50 , height: 50) //画像の大きさ指定
             Text(landmark.name)
-            
             Spacer()
+            
+            //もしお気に入り（Favorite）のランドマークだったら黄色いスター（中サイズ）が表示される
+            if landmark.isFavorite {
+                Image(systemName: "star.fill") //スターのイメージ
+                    .imageScale(.medium) // イメージの大きさ
+                    .foregroundColor(.yellow) // イメージの色
+            }
+            
         }
     }
 }
