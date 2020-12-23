@@ -12,7 +12,7 @@ struct Badge: View {
     static let rotationCount = 8 //表示するシンボルの数
     
     var badgeSymbols: some View {
-        ForEach(0..<Badge.rotationCount) { i in  //  0から7までの数を代入して角度を決める
+        ForEach(0..<Badge.rotationCount) { i in  //0から7までの数を代入して角度を決める
             RotatedBadgeSymbol(
                 angle: .degrees(Double(i) / Double(Badge.rotationCount)) * 360.0
             )
@@ -33,7 +33,7 @@ struct Badge: View {
                     .position(x: geometry.size.width / 2.0, y: (3.0 / 4.0) * geometry.size.height) //画像の配置を指定
             }
         }
-        .scaledToFill()
+        .scaledToFill() //ZStack内の２つの画像BadgeBackgroundとRotatedBadgeSymbolが、描画のアスペクト比を維持しながらZStackと同じ縦横比になる
     }
 }
 
