@@ -25,7 +25,11 @@ struct CategoryRow: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .top, spacing: 0) {
                     ForEach(self.items) { landmark in
-                        CategoryItem(landmark: landmark)
+                        //詳細画面へのナビゲーションリンクの設定
+                        NavigationLink (destination: LandmarkDetail(landmark: landmark)
+                        ) {
+                            CategoryItem(landmark: landmark)
+                        }
                     }
                 }
             }
@@ -39,10 +43,12 @@ struct CategoryItem: View {
     var body: some View {
         VStack(alignment: .leading) {
             landmark.image
+                .renderingMode(.original) // イメージ画像を生成する
                 .resizable() //画像をリサイズする
                 .frame(width: 155, height: 155) //画像サイズ
                 .cornerRadius(5) //画像の角の丸み
             Text(landmark.name) //ランドマーク名（下段）
+                .foregroundColor(.primary) //文字色を指定
                 .font(.caption)
         }
             .padding(.leading, 15) //各ランドマーク画像の間隔
