@@ -15,7 +15,7 @@ struct CategoryRow: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            //カテゴリー名
+            //カテゴリー名(上段)
             Text(self.categoryName)
                 .font(.headline)
                 .padding(.leading, 15)
@@ -25,7 +25,7 @@ struct CategoryRow: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .top, spacing: 0) {
                     ForEach(self.items) { landmark in
-                        Text(landmark.name)
+                        CategoryItem(landmark: landmark)
                     }
                 }
             }
@@ -34,12 +34,27 @@ struct CategoryRow: View {
     }
 }
 
+struct CategoryItem: View {
+    var landmark: Landmark
+    var body: some View {
+        VStack(alignment: .leading) {
+            landmark.image
+                .resizable() //画像をリサイズする
+                .frame(width: 155, height: 155) //画像サイズ
+                .cornerRadius(5) //画像の角の丸み
+            Text(landmark.name) //ランドマーク名（下段）
+                .font(.caption)
+        }
+            .padding(.leading, 15) //各ランドマーク画像の間隔
+    }
+}
+
 struct CategoryRow_Previews: PreviewProvider {
     static var previews: some View {
         CategoryRow(
             //LandmarkData[0]内の「category」項目を表示
             categoryName: landmarkData[0].category.rawValue,
-           //LandmarkData配列の最初の4つを表示
+            //LandmarkData配列の最初の4つを表示
             items: Array(landmarkData.prefix(4))
         )
     }
