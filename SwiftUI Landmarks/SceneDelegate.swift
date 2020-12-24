@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: CategoryHome().environmentObject(UserData()) //userDataでフィルタリングされた値を示す
+            window.rootViewController = UIHostingController(rootView: Home().environmentObject(UserData()) //userDataでフィルタリングされた値を示す
 )
                 
             self.window = window

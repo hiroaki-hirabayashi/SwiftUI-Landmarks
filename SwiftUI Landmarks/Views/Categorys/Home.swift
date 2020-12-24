@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct CategoryHome: View { // ホーム画面
+struct Home: View { // ホーム画面
     
     //LandmarkData内の「category」をkeyにしてvalueをグループ化する
     var categories: [String: [Landmark]] {
@@ -23,7 +23,8 @@ struct CategoryHome: View { // ホーム画面
     }
     
     @State var showingProfile = false
-    
+    @EnvironmentObject var userData: UserData
+
     //ユーザープロファイルへのリンクボタンの設定
     var profileButton: some View {
         Button(action: { self.showingProfile.toggle()}) {
@@ -57,7 +58,8 @@ struct CategoryHome: View { // ホーム画面
                 .navigationBarItems(trailing: profileButton)//ナビゲーションバーにプロフィールボタンを追加
                 
                 .sheet(isPresented: $showingProfile) { //ユーザープロファイルシートを設定
-                    Text("プロフィール ")
+                    ProfileHost()
+                        .environmentObject(self.userData) //ボタンをタップするとProfileHostで作ったビューを表示する
             }
         }
     }
@@ -65,7 +67,7 @@ struct CategoryHome: View { // ホーム画面
 
 struct CategoryHome_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryHome()
+        Home()
     }
 }
 
