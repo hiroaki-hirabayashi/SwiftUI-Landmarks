@@ -9,10 +9,12 @@
 import SwiftUI
 import Combine  //値を監視して仕分けや型の変更を行えるフレームワーク
 
-
+// 非同期処理
 final class UserData: ObservableObject  {//Combineフレームワークで扱える型に値を変更するクラス
     
     @Published var pubShowFavoritesOnly = false
     @Published var pubLandmarks = landmarkData
+    @Published var profile = Profile.default
+
     
 }
