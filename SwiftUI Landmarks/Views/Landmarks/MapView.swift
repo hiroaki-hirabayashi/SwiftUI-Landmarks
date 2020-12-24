@@ -9,7 +9,7 @@
 import SwiftUI
 import MapKit //地図を扱うフレームワーク
 
-struct MapView: UIViewRepresentable {
+struct MapView: UIViewRepresentable { // 詳細画面の地図
     
     var coordinate: CLLocationCoordinate2D
     

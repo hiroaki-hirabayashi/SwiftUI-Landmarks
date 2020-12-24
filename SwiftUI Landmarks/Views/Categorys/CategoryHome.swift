@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct CategoryHome: View {
+struct CategoryHome: View { // ホーム画面
     
     //LandmarkData内の「category」をkeyにしてvalueをグループ化する
     var categories: [String: [Landmark]] {
@@ -21,6 +21,19 @@ struct CategoryHome: View {
     var featured: [Landmark] {
         landmarkData.filter { $0.isFeatured }
     }
+    
+    @State var showingProfile = false
+    
+    //ユーザープロファイルへのリンクボタンの設定
+    var profileButton: some View {
+        Button(action: { self.showingProfile.toggle()}) {
+            Image(systemName: "person.crop.circle")
+                .imageScale(.large)
+                .accessibility(label: Text("User Profile"))
+                .padding()
+        }
+    }
+
     
     var body: some View {
         NavigationView {
@@ -35,9 +48,17 @@ struct CategoryHome: View {
                     CategoryRow(categoryName: key, items: self.categories[key]!) //keyとなる値をテキストとしてリストに入れる
                 }
                     .listRowInsets(EdgeInsets()) //端の余白をゼロにする
+                NavigationLink(destination: LandmarkList()) {
+                    Text("一覧画面へ") // LandmarkListへのリンク
+                }
                 
             }
             .navigationBarTitle("Featured")
+                .navigationBarItems(trailing: profileButton)//ナビゲーションバーにプロフィールボタンを追加
+                
+                .sheet(isPresented: $showingProfile) { //ユーザープロファイルシートを設定
+                    Text("プロフィール ")
+            }
         }
     }
 }

@@ -8,28 +8,28 @@
 
 import SwiftUI
 
-struct LandmarkDetail: View {
+struct LandmarkDetail: View { // 詳細画面
     @EnvironmentObject var userData: UserData
     
-    var landmark: Landmark
+    var landmarkDetail: Landmark
     
     var landmarkIndex: Int {
-        userData.pubLandmarks.firstIndex(where: { $0.id == landmark.id })!
+        userData.pubLandmarks.firstIndex(where: { $0.id == landmarkDetail.id })!
     }
     
     var body: some View {
         VStack {
-            MapView(coordinate: landmark.locationCoordinate) //作成した地図を表示と高さ、セーフエリアを超えて表示
+            MapView(coordinate: landmarkDetail.locationCoordinate) //作成した地図を表示と高さ、セーフエリアを超えて表示
                 .edgesIgnoringSafeArea(.top)
                 .frame(height: 300.0)
           
-            CircleImage(image: landmark.image) //イメージ画像と位置
+            CircleImage(image: landmarkDetail.image) //イメージ画像と位置
                 .offset(y: -130)
                 .padding(.bottom, -130.0)
             
             VStack(alignment: .leading) {
                 HStack {
-                    Text(landmark.name)
+                    Text(landmarkDetail.name)
                         .font(.title)
                     
                     //「お気に入り」を決めるボタンのアクション
@@ -49,11 +49,11 @@ struct LandmarkDetail: View {
                 }
             
                 HStack {
-                    Text(landmark.park)
+                    Text(landmarkDetail.park)
                         .font(.subheadline)
                     Spacer()
                     
-                    Text(landmark.state)
+                    Text(landmarkDetail.state)
                         .font(.subheadline)
                 }
 
@@ -62,13 +62,13 @@ struct LandmarkDetail: View {
             Spacer() //部品全体を上へ移動させる
 
         }
-        .navigationBarTitle(Text(landmark.name), displayMode: .inline)
+        .navigationBarTitle(Text(landmarkDetail.name), displayMode: .inline)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkDetail(landmark: landmarkData[0])
+        LandmarkDetail(landmarkDetail: landmarkData[0])
         .environmentObject(UserData())
 
     }

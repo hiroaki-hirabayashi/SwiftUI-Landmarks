@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct CategoryRow: View {
+struct CategoryRow: View { // ホーム画面で使う行
     
     var categoryName: String
     var items: [Landmark]
@@ -26,7 +26,7 @@ struct CategoryRow: View {
                 HStack(alignment: .top, spacing: 0) {
                     ForEach(self.items) { landmark in
                         //詳細画面へのナビゲーションリンクの設定
-                        NavigationLink (destination: LandmarkDetail(landmark: landmark)
+                        NavigationLink (destination: LandmarkDetail(landmarkDetail: landmark)
                         ) {
                             CategoryItem(landmark: landmark)
                         }

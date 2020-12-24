@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct CircleImage: View {
+struct CircleImage: View { // 詳細画面の写真
     var image: Image
     
     var body: some View {
